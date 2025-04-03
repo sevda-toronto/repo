@@ -11,6 +11,9 @@ jobs:
         os:
           - ubuntu-latest
           - windows-latest
+        include: 
+           - matrix.os: ubuntu-latest
+           - matrix.node: '16.x'
     steps:
       - name: Set-up node
         uses: actions/setup-node@v4
