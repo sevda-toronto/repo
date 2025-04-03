@@ -8,6 +8,8 @@ jobs:
       matrix:
         color: ['red', 'blue']
         shape: ['square', 'circle']
+        include:
+          - opacity: 50
     steps:
       - name: Print color-shapre combination 
-        run: echo ${{matrix.color}}- ${{matrix.shape}}
+        run: echo ${{matrix.color}}- ${{matrix.shape}}-${{matrix.opacity}}
