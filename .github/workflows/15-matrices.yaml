@@ -3,10 +3,10 @@ run-name: Matrices rock!
 on: workflow_dispatch
 jobs:
   backwards-compatability:
-    name: ${{matrix.os}} - ${{matrix.node}}
+    name: ${{matrix.os}} - ${{matrix.node}} - ${{matrix.tag || ''}}
     runs-on: ${{matrix.os}}
     strategy:
-      fail-fast: true
+      fail-fast: false 
       matrix:
         node: ['18.x', '20.x', '21.x']
         os:
@@ -23,6 +23,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{matrix.node}}
+      - name: Fail if experimental
+        if: ${{matrix.tag=='experimental'}}
+        run: exit 1
       - name: Perform some tests
         run: echo "Running test on  OS ${{matrix.os}} and Node version ${{matrix.node}}"
      
