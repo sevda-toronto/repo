@@ -3,6 +3,7 @@ on: workflow_dispatch
 run-name: Matrices will keep rocking forever!!!
 jobs:
   first:
+    name: ${{matrix.color}}- ${{matrix.shape}}-${{matrix.opacity}}
     runs-on: ubuntu-latest 
     strategy:
       matrix:
