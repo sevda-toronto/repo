@@ -1,4 +1,4 @@
-name: Working with Matrices
+name: 16 - Working with Matrices
 run-name: Matrices rock again!!!
 on: workflow_dispatch
 jobs:
@@ -14,6 +14,10 @@ jobs:
         include:
           - color: red
             shape: triangle
+            size: small
+          - color: red
+            shape: triangle
+            size: large 
     steps:
       - name: Dummy step
         run: echo ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}}
