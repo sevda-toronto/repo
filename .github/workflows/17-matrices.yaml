@@ -4,6 +4,7 @@ jobs:
   example-job:
     name: ${{matrix.node}} - Node.js Test 
     runs-on: ubuntu-latest 
+    continue-on-error: true 
     strategy:
       fail-fast: false 
       matrix:
