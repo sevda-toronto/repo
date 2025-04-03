@@ -3,7 +3,7 @@ run-name: Matrices rock again!!!
 on: workflow_dispatch
 jobs:
   include-example:
-    name: ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}} -  ${{matrix.tag || ''}}
+    name: ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}} -  ${{matrix.tag || ''}}- ${matrix.opacity}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
@@ -12,6 +12,7 @@ jobs:
         shape: ['circle', 'square']
         size: ['small', 'large']
         include:
+          - opacity: 50 
           - color: red
             tag: cookie 
           - color: red
