@@ -14,13 +14,14 @@ jobs:
         include:
           - color: red
             tag: cookie 
-            
           - color: red
             shape: triangle
+            tag: cookie 
             size: small
           - color: red
             shape: triangle
             size: large 
+            tag: cookie 
 
         
     steps:
