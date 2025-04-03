@@ -14,7 +14,10 @@ jobs:
           - windows-latest
         include: 
            - os: ubuntu-latest
-             node: '1ddd.x'
+             node: '16.x'
+           - os: ubuntu-latest
+             node: '21.x'
+             tax: experimental
     steps:
       - name: Set-up node
         uses: actions/setup-node@v4
