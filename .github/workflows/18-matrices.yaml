@@ -1,0 +1,13 @@
+name: 18 - Matrix - Final Practice with Include and Exclude
+on: workflow_dispatch
+run-name: Matrices will keep rocking forever!!!
+jobs:
+  first:
+    runs-on: ubuntu-latest 
+    strategy:
+      matrix:
+        color: ['red', 'blue']
+        shape: ['square', 'circle']
+    steps:
+      - name: Print color-shapre combination 
+        run: ${{matrix.color}}- ${{matrix.shape}}
