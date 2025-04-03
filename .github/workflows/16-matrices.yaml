@@ -13,13 +13,16 @@ jobs:
         size: ['small', 'large']
         include:
           - color: red
+            tag: cookie 
+            
+          - color: red
             shape: triangle
             size: small
           - color: red
             shape: triangle
             size: large 
-          - color: red
-            tag: cookie 
+
+        
     steps:
       - name: Dummy step
         run: echo ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}}
