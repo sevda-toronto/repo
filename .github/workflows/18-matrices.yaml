@@ -13,6 +13,8 @@ jobs:
           - opacity: 75
             color: red 
           - opacity: 50   
+          - color: purple
+            shape: rectangle 
     steps:
       - name: Print color-shapre combination 
         run: echo ${{matrix.color}}- ${{matrix.shape}}-${{matrix.opacity}}
