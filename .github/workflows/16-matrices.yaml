@@ -14,8 +14,6 @@ jobs:
         include:
           - opacity: 50 
           - color: red
-            tag: cookie 
-          - color: red
             shape: triangle
             tag: cookie 
             size: small
