@@ -6,6 +6,7 @@ jobs:
     name: ${{matrix.os}} - ${{matrix.node}}
     runs-on: ${{matrix.os}}
     strategy:
+      fail-fast: false 
       matrix:
         node: ['18.x', '20.x', '21.x']
         os:
@@ -13,7 +14,7 @@ jobs:
           - windows-latest
         include: 
            - os: ubuntu-latest
-             node: '16.x'
+             node: '1ddd.x'
     steps:
       - name: Set-up node
         uses: actions/setup-node@v4
