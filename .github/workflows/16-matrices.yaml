@@ -3,7 +3,7 @@ run-name: Matrices rock again!!!
 on: workflow_dispatch
 jobs:
   include-example:
-    name: ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}} -  ${{matrix.tag || ''}}- ${matrix.opacity}
+    name: ${{matrix.color}}-${{matrix.shape}}-${{matrix.size}}-${{matrix.tag||''}}-${{matrix.opacity}}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
