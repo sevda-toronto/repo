@@ -1,0 +1,19 @@
+name: Working with Matrices
+run-name: Matrices rock again!!!
+on: workflow_dispatch
+jobs:
+  include-example:
+    name: ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        color: ['red', 'green']
+        shape: ['circle', 'square']
+        size: ['small', 'large']
+        include:
+          - color: red
+            shape: triangle
+    steps:
+      - name: Dummy step
+        run: echo ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}}
