@@ -3,7 +3,7 @@ run-name: Matrices rock again!!!
 on: workflow_dispatch
 jobs:
   include-example:
-    name: ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}}
+    name: ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}} -  ${{matrix.tag || ''}}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
@@ -18,6 +18,8 @@ jobs:
           - color: red
             shape: triangle
             size: large 
+          - color: red
+            tag: cookie 
     steps:
       - name: Dummy step
         run: echo ${{matrix.color}} - ${{matrix.shape}} - ${{matrix.size}}
