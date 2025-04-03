@@ -18,6 +18,8 @@ jobs:
            - os: ubuntu-latest
              node: '21.x'
              tag: experimental
+           - os: windows-latest
+             tag: win!
     steps:
       - name: Set-up node
         uses: actions/setup-node@v4
