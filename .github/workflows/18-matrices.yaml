@@ -10,4 +10,4 @@ jobs:
         shape: ['square', 'circle']
     steps:
       - name: Print color-shapre combination 
-        run: ${{matrix.color}}- ${{matrix.shape}}
+        run: echo ${{matrix.color}}- ${{matrix.shape}}
