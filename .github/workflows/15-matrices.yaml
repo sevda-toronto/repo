@@ -23,5 +23,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{matrix.node}}
+      - name: Fail if experimental
+        if: job.tag == 'experimental'
+        run: exit 1
       - name: Perform some tests
         run: echo "Running test on  OS ${{matrix.os}} and Node version ${{matrix.node}}"
+     
