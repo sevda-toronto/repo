@@ -13,6 +13,7 @@ jobs:
           - opacity: 50
             color: blue 
           - opacity: 75
+            color: red 
         
     steps:
       - name: Print color-shapre combination 
