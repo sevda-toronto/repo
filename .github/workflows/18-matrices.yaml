@@ -10,9 +10,9 @@ jobs:
         color: ['red', 'blue']
         shape: ['square', 'circle']
         include:
-          - opacity: 75
           - opacity: 50
             color: blue 
+          - opacity: 75
         
     steps:
       - name: Print color-shapre combination 
