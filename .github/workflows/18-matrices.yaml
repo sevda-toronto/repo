@@ -10,11 +10,9 @@ jobs:
         color: ['red', 'blue']
         shape: ['square', 'circle']
         include:
-          - opacity: 50
-            color: blue 
           - opacity: 75
             color: red 
-        
+          - opacity: 50   
     steps:
       - name: Print color-shapre combination 
         run: echo ${{matrix.color}}- ${{matrix.shape}}-${{matrix.opacity}}
