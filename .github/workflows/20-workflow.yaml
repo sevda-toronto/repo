@@ -1,5 +1,5 @@
 name: 20 - Workflow 
-run-name: Workflow run ID number ${{github.run_id}} is run ${{github.actor}}
+run-name: ID ${{github.run_id}} Number ${{github.run_number}} Actor ${{github.actor}}
 on: workflow_dispatch
 jobs:
   first:
