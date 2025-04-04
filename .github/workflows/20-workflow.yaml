@@ -5,4 +5,4 @@ jobs:
   first:
     runs-on: ubuntu-latest
     steps:
-      - run: echo Hello Wolrd
+      - run: echo Hello Wolrd!
