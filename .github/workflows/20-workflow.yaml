@@ -1,8 +1,29 @@
-name: 20 - Workflow 
-run-name: ID ${{github.run_id}} Number ${{github.run_number}} Actor ${{github.actor}}
-on: workflow_dispatch
+name: Create Hello.txt File
+
+on:
+  push:
+    branches:
+      - main
+      
 jobs:
-  first:
+  create-file:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo Hello Wolrd!
+    - name: Checkout code
+      uses: actions/checkout@v4  
+
+    - name: Create hello.txt file
+      run: |
+        echo "Hello, World!" > hello.txt  # Creates the file with content
+
+    - name: Commit and push the new file
+      run: |
+        git config user.name "github-actions[bot]"  # Set the commit author
+        git config user.email "github-actions[bot]@users.noreply.github.com"  # Set the commit email
+        git add hello.txt  # Stage the new file
+        git commit -m "Add hello.txt file"  # Commit the new file
+        git push origin main  # Push the changes to the 'main' branch
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+
