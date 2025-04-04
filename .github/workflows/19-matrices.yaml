@@ -1,0 +1,36 @@
+name: CI Workflow
+
+on:
+  push:
+    paths:
+      - '**/node_component/**'
+      - '**/python_component/**'
+  pull_request:
+    paths:
+      - '**/node_component/**'
+      - '**/python_component/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        language: [node, python]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up environment
+        run: |
+          if [ "${{ matrix.language }}" == "node" ]; then
+            echo "Setting up Node.js"
+            # Node.js setup steps
+          elif [ "${{ matrix.language }}" == "python" ]; then
+            echo "Setting up Python"
+            # Python setup steps
+          fi
+      - name: Run tests
+        run: |
+          if [ "${{ matrix.language }}" == "node" ]; then
+            npm install && npm test
+          elif [ "${{ matrix.language }}" == "python" ]; then
+            pip install -r requirements.txt && pytest
+          fi
